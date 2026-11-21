@@ -66,6 +66,7 @@ public partial class MainWindow : Window
         _tray.DonateRequested += () => Donate_Click(this, new RoutedEventArgs());
         _tray.ExitRequested += ExitApp;
         Loc.Lang = _settings.Language; _tray.SetTexts();
+        Loaded += (_, _) => MemoryTrim.Schedule(4000); // sau khi khởi động xong, trả bớt RAM tạm
 
         Closing += (_, e) =>
         {
@@ -73,6 +74,7 @@ public partial class MainWindow : Window
             if (_exiting || !_settings.RunInTray) return;
             e.Cancel = true;
             Hide();
+            MemoryTrim.Schedule();
             if (!_balloonShown) { _balloonShown = true; _tray.ShowBalloon(Loc.T("tray.balloon")); }
         };
         Closed += (_, _) => { UnregisterHotkey(); _tray.Dispose(); };
@@ -175,7 +177,7 @@ public partial class MainWindow : Window
             var (image, screen) = ScreenCaptureService.CaptureMonitorAtCursor();
             var overlay = new CaptureWindow(image, screen.Bounds);
             // Chụp bằng hotkey nên để cửa sổ chính ở trạng thái thu nhỏ, không giành focus của app đang cần dán ảnh vào.
-            overlay.Closed += (_, _) => _capturing = false;
+            overlay.Closed += (_, _) => { _capturing = false; MemoryTrim.Schedule(); };
             overlay.Show();
             overlay.Activate();
         }

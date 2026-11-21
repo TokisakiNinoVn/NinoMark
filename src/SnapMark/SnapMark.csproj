@@ -12,6 +12,11 @@
     <RootNamespace>SnapMark</RootNamespace>
     <Version>0.3.0</Version>
     <ApplicationIcon>Assets/app-fit.ico</ApplicationIcon>
+    <!-- Tối ưu RAM -->
+    <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
+    <ServerGarbageCollector>false</ServerGarbageCollector>
+    <TieredPGO>false</TieredPGO>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
   </PropertyGroup>
   <ItemGroup>
     <Resource Include="Assets/app-fit.ico" />
@@ -24,6 +29,7 @@
     <Using Remove="System.Windows.Forms" />
   </ItemGroup>
   <ItemGroup>
+    <RuntimeHostConfigurationOption Include="System.GC.ConserveMemory" Value="7" />
     <PackageReference Include="Material.Icons.WPF" Version="3.0.2" />
   </ItemGroup>
 </Project>
