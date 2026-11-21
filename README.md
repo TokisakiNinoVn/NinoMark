@@ -1,104 +1,102 @@
 # SnapMark
 
+**English** | [Tiếng Việt](README.vi.md)
+
+[![CI](https://github.com/TokisakiNinoVn/SnapMark/actions/workflows/ci.yml/badge.svg)](https://github.com/TokisakiNinoVn/SnapMark/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/TokisakiNinoVn/SnapMark)](https://github.com/TokisakiNinoVn/SnapMark/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-blue)
 ![.NET](https://img.shields.io/badge/.NET-10-512BD4)
 
-Ứng dụng chụp màn hình và chú thích nhanh cho Windows, viết bằng C# + WPF (.NET 10). Nhấn phím tắt, kéo chọn vùng, vẽ chú thích ngay trên vùng chọn rồi copy hoặc lưu — không cần mở thêm cửa sổ chỉnh sửa nào.
+A fast, lightweight screenshot and annotation tool for Windows, built with C# and WPF (.NET 10).
+Press a hotkey, drag a region, draw annotations right on top of it, then copy or save. No separate editor window.
 
-## Tính năng
+<!-- Add screenshots to docs/images/ and uncomment:
+![Overlay editor](docs/images/overlay.png)
+![Settings](docs/images/settings.png)
+-->
 
-### Chụp & chọn vùng
-- Phím tắt toàn cục (mặc định `Ctrl + Shift + S`) — tự chụp màn hình đang chứa con trỏ chuột.
-- Kéo để chọn vùng; resize bằng 8 handle, kéo bên trong để di chuyển vùng.
-- Kính lúp khi chọn vùng, lưới căn chỉnh (đường kẻ/chấm, không xuất ra ảnh), khóa tỉ lệ khung hình.
+## Download
 
-### Chú thích tại chỗ
-- Công cụ: Chọn, Chữ, Bút, Đường thẳng, Mũi tên, Chữ nhật, Elip, Highlight, Blur (pixelate), Tương phản (đảo màu), Đánh số, Thước đo (px).
-- Tùy chỉnh màu (bộ chọn + hex), độ dày, độ mờ, kiểu nét (liền, đứt, chấm, gạch-chấm, đôi), kiểu mũi tên, font chữ.
-- Bảng layer: đổi tên (nhấp đúp), ẩn/hiện, chọn nhiều (Ctrl/Shift + click), xóa, đổi thứ tự.
-- Giữ `Shift` khi vẽ để ra hình vuông/tròn hoặc khóa góc 45°.
-- Undo / Redo.
+Grab the latest build from the [Releases page](https://github.com/TokisakiNinoVn/SnapMark/releases/latest), unzip it and run `SnapMark.exe`.
+The `win-x64` package already includes .NET, so nothing else needs to be installed.
 
-### Xuất ảnh
-- Copy vào clipboard, Lưu nhanh vào thư mục cấu hình, hoặc Lưu thành... (chọn nơi lưu).
-- Hoàn tất = copy + đóng.
+## Features
 
-### Hệ thống
-- Chạy nền ở system tray, tùy chọn khởi động cùng Windows.
-- Đa ngôn ngữ: English (mặc định) / Tiếng Việt.
-- Theme: Light (mặc định) / Dark / System.
+**Capture**
+- Global hotkey (default `Alt + Shift + S`) captures the monitor under the cursor.
+- Drag to select, resize with 8 handles, drag inside to move; magnifier loupe, alignment grid and aspect-ratio lock.
 
-## Phím tắt mặc định
+**In-place annotation**
+- Tools: select, text, pen, line (plain / ticked / dotted / arrow ends), arrow, rectangle, ellipse, highlight, blur, invert, number, ruler, magnifier.
+- Color picker, thickness, opacity, stroke style (solid, dash, dot, double), arrow type, font and font weight.
+- Layers panel: rename, show/hide, multi-select, reorder. Edit text and numbers by clicking them; hold `Ctrl` with any tool to select and move objects directly.
+- Hold `Shift` for squares, circles and 45° angles. Undo / redo.
 
-| Phím | Chức năng |
+**Output**
+- Copy to clipboard, quick save to a configured folder, or save as.
+
+**System**
+- Runs in the system tray, optional start with Windows.
+- English / Tiếng Việt, light / dark / system theme.
+- Fully remappable shortcuts, reorderable toolbar, settings import / export.
+
+## Default shortcuts
+
+| Key | Action |
 | --- | --- |
-| `Ctrl + Shift + S` | Chụp màn hình (toàn cục) |
-| `Esc` | Hủy |
+| `Alt + Shift + S` | Capture (global) |
+| `Esc` | Cancel |
 | `Enter` / `Ctrl + C` | Copy |
-| `Ctrl + S` | Lưu nhanh |
-| `Ctrl + Z` | Undo |
-| `T P L A R E H B N` | Chọn công cụ |
+| `Ctrl + S` | Quick save |
+| `Ctrl + Z` / `Ctrl + Y` | Undo / redo |
+| `V T P L A R E H B N M` | Select tool |
 
-Mọi phím tắt đều đổi được trong tab **Shortcuts** (có kiểm tra trùng phím).
+All shortcuts can be changed in the main window.
 
-## Cài đặt
+## Settings
 
-Cửa sổ chính có 3 tab:
+Settings live in `%AppData%\SnapMark\settings.json`. Set the `SNAPMARK_DATA_DIR` environment variable to use a separate data folder (handy for testing without touching real settings). You can also export and import settings from the main window.
 
-- **General** — ngôn ngữ, theme, phím tắt chụp, thư mục lưu, định dạng, khởi động cùng Windows, chạy nền ở tray.
-- **Display** — vị trí thanh công cụ (Top/Bottom/Left/Right), gộp/tách thanh, hiện phím tắt trên nút, độ mờ viền chọn, kính lúp, lưới, bật/tắt từng tool, giá trị mặc định (màu, độ dày...).
-- **Shortcuts** — phím tắt cho từng tool và thao tác.
+## Build from source
 
-Cài đặt lưu tại `%AppData%\SnapMark\settings.json`. Đặt biến môi trường `SNAPMARK_DATA_DIR` để dùng thư mục dữ liệu riêng (hữu ích khi chạy thử, không đụng vào cài đặt thật).
-
-## Yêu cầu
-
-- Windows 10/11 x64
-- [.NET 10 SDK](https://dotnet.microsoft.com/download) (kèm Windows Desktop targeting pack)
-
-## Build & chạy
+Requires Windows 10/11 and the [.NET 10 SDK](https://dotnet.microsoft.com/download).
 
 ```powershell
-dotnet restore .\SnapMark.sln
-dotnet build .\SnapMark.sln -c Debug
+dotnet build .\SnapMark.sln -c Release
 dotnet run --project .\src\SnapMark\SnapMark.csproj
 ```
 
-## Publish bản chạy độc lập
+Publish a self-contained single file:
 
 ```powershell
 dotnet publish .\src\SnapMark\SnapMark.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o .\publish
 ```
 
-Chạy `publish\SnapMark.exe`.
+## Releasing
 
-## Cấu trúc dự án
+Pushing a tag such as `v0.4.0` triggers the [release workflow](.github/workflows/release.yml), which builds the app and attaches the zip packages to a GitHub Release.
+
+```powershell
+git tag v0.4.0
+git push origin v0.4.0
+```
+
+## Project structure
 
 ```text
 SnapMark.sln
 src/SnapMark/
-├─ App.xaml(.cs)                  # Điểm khởi động
-├─ MainWindow.xaml(.cs)           # Cửa sổ cài đặt + đăng ký hotkey toàn cục
-├─ Models/AppSettings.cs          # Mô hình cài đặt
-├─ Services/
-│  ├─ ScreenCaptureService.cs     # Chụp màn hình dưới con trỏ
-│  ├─ SettingsService.cs          # Đọc/ghi settings.json
-│  ├─ TrayService.cs              # System tray, khởi động cùng Windows
-│  ├─ ShortcutHelper.cs           # Phím tắt mặc định, kiểm tra trùng
-│  ├─ Loc.cs                      # Đa ngôn ngữ
-│  └─ Presets.cs, AppInfo.cs
+├─ App.xaml(.cs)                  # Entry point
+├─ MainWindow.xaml(.cs)           # Settings window + global hotkey
+├─ Models/AppSettings.cs          # Settings model
+├─ Services/                      # Capture, settings, tray, shortcuts, localization, icons
 └─ Windows/
-   ├─ CaptureWindow.xaml(.cs)     # Overlay: chọn vùng + chú thích tại chỗ
+   ├─ CaptureWindow.xaml(.cs)     # Overlay: selection + in-place annotation
    ├─ AboutWindow.xaml(.cs)
    └─ InfoListWindow.xaml(.cs)
 ```
 
-## Giới hạn hiện tại
+## License
 
-- Chưa test kỹ multi-monitor có scaling khác nhau (100%/125%/150%).
-- Chỉ hỗ trợ Windows.
-
-## Giấy phép
-
-Phát hành theo [MIT License](LICENSE).
+Released under the [MIT License](LICENSE).
