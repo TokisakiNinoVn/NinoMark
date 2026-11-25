@@ -6,6 +6,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+- Lower memory use: the working set is trimmed when the app sits in the tray and after a capture, dropping idle RAM from ~160 MB to under 10 MB.
+
 ## [0.3.0] - 2026-11-21
 
 First public release.
