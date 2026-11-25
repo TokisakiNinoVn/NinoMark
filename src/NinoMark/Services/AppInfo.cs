@@ -11,7 +11,7 @@ public static class AppInfo
     // ── TODO: thay bằng thông tin thật ──
     public const string Author = "Tokisaki Nino";
     public const string WebsiteUrl = "https://github.com/TokisakiNinoVn/NinoMark";
-    public const string DonateUrl = "https://example.com/donate";
+    public const string DonateUrl = "https://tokisaki-nino.pages.dev/donate";
 
     public static string Version => Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "1.0.0";
 
