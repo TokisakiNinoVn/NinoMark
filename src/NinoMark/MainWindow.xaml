@@ -1,8 +1,8 @@
-<Window x:Class="SnapMark.MainWindow"
+<Window x:Class="NinoMark.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mi="clr-namespace:Material.Icons.WPF;assembly=Material.Icons.WPF"
-        Title="SnapMark" Width="1000" Height="820" MinWidth="900" MinHeight="620"
+        Title="NinoMark" Width="1000" Height="820" MinWidth="900" MinHeight="620"
         WindowStartupLocation="CenterScreen" Background="{DynamicResource WindowBrush}" Foreground="{DynamicResource TextBrush}"
         UseLayoutRounding="True" TextOptions.TextFormattingMode="Display">
   <Window.Resources>

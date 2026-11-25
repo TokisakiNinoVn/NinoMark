@@ -2,10 +2,10 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
 using System.Windows.Interop;
-using SnapMark.Services;
+using NinoMark.Services;
 using Application = System.Windows.Application;
 
-namespace SnapMark;
+namespace NinoMark;
 
 public partial class App : Application
 {
@@ -16,8 +16,8 @@ public partial class App : Application
     {
         // Chỉ cho chạy một bản (theo thư mục dữ liệu): mở lần nữa thì chỉ báo bản đang chạy hiện cửa sổ lên.
         var id = Convert.ToHexString(SHA1.HashData(Encoding.UTF8.GetBytes(SettingsService.DataFolder.ToLowerInvariant())))[..12];
-        _mutex = new Mutex(true, "SnapMark.Instance." + id, out var first);
-        _showEvent = new EventWaitHandle(false, EventResetMode.AutoReset, "SnapMark.Show." + id);
+        _mutex = new Mutex(true, "NinoMark.Instance." + id, out var first);
+        _showEvent = new EventWaitHandle(false, EventResetMode.AutoReset, "NinoMark.Show." + id);
         if (!first)
         {
             _showEvent.Set();

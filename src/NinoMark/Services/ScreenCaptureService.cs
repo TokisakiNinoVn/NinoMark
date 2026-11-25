@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Interop;
 using System.Windows.Media.Imaging;
 using Forms = System.Windows.Forms;
-namespace SnapMark.Services;
+namespace NinoMark.Services;
 public static class ScreenCaptureService
 {
     public static (BitmapSource Image, Forms.Screen Screen) CaptureMonitorAtCursor()

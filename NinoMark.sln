@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnapMark", "src\SnapMark\SnapMark.csproj", "{E8A4A4A1-CC41-4F4A-9E0D-5E32D43BEE71}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NinoMark", "src\NinoMark\NinoMark.csproj", "{E8A4A4A1-CC41-4F4A-9E0D-5E32D43BEE71}"
 EndProject
 Global
  GlobalSection(SolutionConfigurationPlatforms) = preSolution

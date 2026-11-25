@@ -24,25 +24,25 @@ jobs:
 
       - name: Publish self-contained (win-x64)
         run: >
-          dotnet publish src/SnapMark/SnapMark.csproj -c Release -r win-x64
+          dotnet publish src/NinoMark/NinoMark.csproj -c Release -r win-x64
           --self-contained true -p:PublishSingleFile=true
           -p:IncludeNativeLibrariesForSelfExtract=true -p:EnableCompressionInSingleFile=true
           -p:Version=$env:VERSION -o out/self-contained
 
       - name: Publish framework-dependent
         run: >
-          dotnet publish src/SnapMark/SnapMark.csproj -c Release -r win-x64
+          dotnet publish src/NinoMark/NinoMark.csproj -c Release -r win-x64
           --self-contained false -p:Version=$env:VERSION -o out/framework-dependent
 
       - name: Package
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force dist | Out-Null
-          Compress-Archive -Path out/self-contained/* -DestinationPath "dist/SnapMark-$env:VERSION-win-x64.zip"
-          Compress-Archive -Path out/framework-dependent/* -DestinationPath "dist/SnapMark-$env:VERSION-win-x64-framework-dependent.zip"
+          Compress-Archive -Path out/self-contained/* -DestinationPath "dist/NinoMark-$env:VERSION-win-x64.zip"
+          Compress-Archive -Path out/framework-dependent/* -DestinationPath "dist/NinoMark-$env:VERSION-win-x64-framework-dependent.zip"
 
       - name: Create GitHub release
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "${{ github.ref_name }}" dist/*.zip --title "SnapMark ${{ github.ref_name }}" --generate-notes
+        run: gh release create "${{ github.ref_name }}" dist/*.zip --title "NinoMark ${{ github.ref_name }}" --generate-notes

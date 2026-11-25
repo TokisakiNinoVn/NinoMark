@@ -1,7 +1,7 @@
 using System.Windows;
-using SnapMark.Services;
+using NinoMark.Services;
 
-namespace SnapMark.Windows;
+namespace NinoMark.Windows;
 
 /// <summary>Cửa sổ nhỏ giới thiệu app và người làm.</summary>
 public partial class AboutWindow : Window

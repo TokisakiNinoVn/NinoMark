@@ -1,10 +1,14 @@
-# SnapMark
+<p align="center">
+  <img src="docs/images/logo.png" width="128" alt="NinoMark logo">
+</p>
+
+<h1 align="center">NinoMark</h1>
 
 **Tiếng Việt** | [English](README.md)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![CI](https://github.com/TokisakiNinoVn/SnapMark/actions/workflows/ci.yml/badge.svg)](https://github.com/TokisakiNinoVn/SnapMark/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/TokisakiNinoVn/SnapMark)](https://github.com/TokisakiNinoVn/SnapMark/releases/latest)
+[![CI](https://github.com/TokisakiNinoVn/NinoMark/actions/workflows/ci.yml/badge.svg)](https://github.com/TokisakiNinoVn/NinoMark/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/TokisakiNinoVn/NinoMark)](https://github.com/TokisakiNinoVn/NinoMark/releases/latest)
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-blue)
 ![.NET](https://img.shields.io/badge/.NET-10-512BD4)
 
@@ -55,11 +59,11 @@ Cửa sổ chính có 3 tab:
 - **Display** — vị trí thanh công cụ (Top/Bottom/Left/Right), gộp/tách thanh, hiện phím tắt trên nút, độ mờ viền chọn, kính lúp, lưới, bật/tắt từng tool, giá trị mặc định (màu, độ dày...).
 - **Shortcuts** — phím tắt cho từng tool và thao tác.
 
-Cài đặt lưu tại `%AppData%\SnapMark\settings.json`. Đặt biến môi trường `SNAPMARK_DATA_DIR` để dùng thư mục dữ liệu riêng (hữu ích khi chạy thử, không đụng vào cài đặt thật).
+Cài đặt lưu tại `%AppData%\NinoMark\settings.json`. Đặt biến môi trường `NINOMARK_DATA_DIR` để dùng thư mục dữ liệu riêng (hữu ích khi chạy thử, không đụng vào cài đặt thật).
 
 ## Tải về
 
-Tải bản chạy sẵn tại [trang Releases](https://github.com/TokisakiNinoVn/SnapMark/releases/latest): giải nén và chạy `SnapMark.exe` (bản `win-x64` đã kèm sẵn .NET, không cần cài thêm).
+Tải bản chạy sẵn tại [trang Releases](https://github.com/TokisakiNinoVn/NinoMark/releases/latest): giải nén và chạy `NinoMark.exe` (bản `win-x64` đã kèm sẵn .NET, không cần cài thêm).
 
 ## Yêu cầu khi tự build
 
@@ -69,24 +73,24 @@ Tải bản chạy sẵn tại [trang Releases](https://github.com/TokisakiNinoV
 ## Build & chạy
 
 ```powershell
-dotnet restore .\SnapMark.sln
-dotnet build .\SnapMark.sln -c Debug
-dotnet run --project .\src\SnapMark\SnapMark.csproj
+dotnet restore .\NinoMark.sln
+dotnet build .\NinoMark.sln -c Debug
+dotnet run --project .\src\NinoMark\NinoMark.csproj
 ```
 
 ## Publish bản chạy độc lập
 
 ```powershell
-dotnet publish .\src\SnapMark\SnapMark.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o .\publish
+dotnet publish .\src\NinoMark\NinoMark.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o .\publish
 ```
 
-Chạy `publish\SnapMark.exe`.
+Chạy `publish\NinoMark.exe`.
 
 ## Cấu trúc dự án
 
 ```text
-SnapMark.sln
-src/SnapMark/
+NinoMark.sln
+src/NinoMark/
 ├─ App.xaml(.cs)                  # Điểm khởi động
 ├─ MainWindow.xaml(.cs)           # Cửa sổ cài đặt + đăng ký hotkey toàn cục
 ├─ Models/AppSettings.cs          # Mô hình cài đặt

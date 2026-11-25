@@ -1,7 +1,7 @@
 using System.Globalization;
 using System.Windows.Media;
 
-namespace SnapMark.Services;
+namespace NinoMark.Services;
 
 /// <summary>Các giá trị có sẵn: kiểu nét, tỉ lệ khung hình, màu; dùng chung cho cửa sổ cài đặt và overlay.</summary>
 public static class Presets

@@ -1,9 +1,9 @@
 using System.Text.Json;
-using SnapMark.Models;
-namespace SnapMark.Services;
+using NinoMark.Models;
+namespace NinoMark.Services;
 public static class SettingsService
 {
-    // SNAPMARK_DATA_DIR: thư mục dữ liệu riêng (dùng khi chạy thử/test để không đụng vào cài đặt thật).
+    // NINOMARK_DATA_DIR: thư mục dữ liệu riêng (dùng khi chạy thử/test để không đụng vào cài đặt thật).
     public static string DataFolder => Folder;
 
     private static readonly string Folder = ResolveFolder();
@@ -11,19 +11,24 @@ public static class SettingsService
 
     private static string ResolveFolder()
     {
-        if (Environment.GetEnvironmentVariable("SNAPMARK_DATA_DIR") is { Length: > 0 } custom) return custom;
+        if (Environment.GetEnvironmentVariable("NINOMARK_DATA_DIR") is { Length: > 0 } custom) return custom;
 
         var appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
-        var folder = Path.Combine(appData, "SnapMark");
+        var folder = Path.Combine(appData, "NinoMark");
         try
         {
-            // App từng tên QuickShot: lần chạy đầu với tên mới thì chuyển cài đặt cũ sang để không mất.
-            var oldFile = Path.Combine(appData, "QuickShot", "settings.json");
+            // App từng tên QuickShot, rồi SnapMark: lần chạy đầu với tên mới thì chuyển cài đặt cũ sang để không mất.
             var newFile = Path.Combine(folder, "settings.json");
-            if (!File.Exists(newFile) && File.Exists(oldFile))
+            if (!File.Exists(newFile))
             {
-                Directory.CreateDirectory(folder);
-                File.Copy(oldFile, newFile);
+                foreach (var oldName in new[] { "SnapMark", "QuickShot" })
+                {
+                    var oldFile = Path.Combine(appData, oldName, "settings.json");
+                    if (!File.Exists(oldFile)) continue;
+                    Directory.CreateDirectory(folder);
+                    File.Copy(oldFile, newFile);
+                    break;
+                }
             }
         }
         catch { /* không chuyển được thì dùng cài đặt mặc định */ }

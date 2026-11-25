@@ -11,8 +11,8 @@ using System.Windows.Threading;
 using Material.Icons;
 using Material.Icons.WPF;
 using Microsoft.Win32;
-using SnapMark.Models;
-using SnapMark.Services;
+using NinoMark.Models;
+using NinoMark.Services;
 using Color = System.Windows.Media.Color;
 using Brushes = System.Windows.Media.Brushes;
 using DrawingRectangle = System.Drawing.Rectangle;
@@ -22,7 +22,7 @@ using Point = System.Windows.Point;
 using Rectangle = System.Windows.Shapes.Rectangle;
 using TextBox = System.Windows.Controls.TextBox;
 
-namespace SnapMark.Windows;
+namespace NinoMark.Windows;
 
 /// <summary>
 /// Overlay toàn màn hình: chọn vùng + chú thích ngay trên vùng chọn (kiểu Lightshot/Flameshot).
@@ -2592,11 +2592,11 @@ public partial class CaptureWindow : Window
         {
             var settings = SettingsService.Load();
             var dir = string.IsNullOrWhiteSpace(settings.SaveDirectory)
-                ? System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), "SnapMark")
+                ? System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), "NinoMark")
                 : settings.SaveDirectory;
             Directory.CreateDirectory(dir);
             var ext = settings.DefaultFormat.Equals("JPG", StringComparison.OrdinalIgnoreCase) ? ".jpg" : ".png";
-            var path = System.IO.Path.Combine(dir, "SnapMark_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ext);
+            var path = System.IO.Path.Combine(dir, "NinoMark_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ext);
             var bmp = RenderFinal();
             SaveToFile(bmp, path);
             if (settings.CopyAfterCapture) CopyToClipboard(bmp);
@@ -2612,7 +2612,7 @@ public partial class CaptureWindow : Window
         var dialog = new SaveFileDialog
         {
             Title = Loc.T("dlg.saveTitle"), Filter = "PNG image|*.png|JPEG image|*.jpg", DefaultExt = ".png",
-            FileName = "SnapMark_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png",
+            FileName = "NinoMark_" + DateTime.Now.ToString("yyyyMMdd_HHmmss") + ".png",
             InitialDirectory = Directory.Exists(settings.SaveDirectory) ? settings.SaveDirectory : Environment.GetFolderPath(Environment.SpecialFolder.MyPictures),
         };
         if (dialog.ShowDialog(this) != true) return;

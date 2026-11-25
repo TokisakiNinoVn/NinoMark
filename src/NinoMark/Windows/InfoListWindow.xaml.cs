@@ -1,9 +1,9 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using SnapMark.Services;
+using NinoMark.Services;
 
-namespace SnapMark.Windows;
+namespace NinoMark.Windows;
 
 /// <summary>Cửa sổ nhỏ hiển thị một danh sách (Tính năng / Cách dùng).</summary>
 public partial class InfoListWindow : Window

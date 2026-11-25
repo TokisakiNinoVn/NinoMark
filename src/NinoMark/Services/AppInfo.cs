@@ -1,16 +1,16 @@
 using System.Diagnostics;
 using System.Reflection;
 
-namespace SnapMark.Services;
+namespace NinoMark.Services;
 
 /// <summary>Thông tin app / người làm. Sửa các hằng số bên dưới cho đúng thông tin thật của bạn.</summary>
 public static class AppInfo
 {
-    public const string AppName = "SnapMark";
+    public const string AppName = "NinoMark";
 
     // ── TODO: thay bằng thông tin thật ──
     public const string Author = "Tokisaki Nino";
-    public const string WebsiteUrl = "https://example.com/snapmark";
+    public const string WebsiteUrl = "https://github.com/TokisakiNinoVn/NinoMark";
     public const string DonateUrl = "https://example.com/donate";
 
     public static string Version => Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "1.0.0";

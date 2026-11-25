@@ -1,7 +1,7 @@
 using System.Windows.Input;
-using SnapMark.Models;
+using NinoMark.Models;
 
-namespace SnapMark.Services;
+namespace NinoMark.Services;
 
 /// <summary>Danh sách tool/thao tác có phím tắt, giá trị mặc định, parse/format chuỗi phím.</summary>
 public static class ShortcutHelper

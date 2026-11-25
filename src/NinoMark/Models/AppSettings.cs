@@ -1,6 +1,6 @@
-using SnapMark.Services;
+using NinoMark.Services;
 
-namespace SnapMark.Models;
+namespace NinoMark.Models;
 
 public sealed class AppSettings
 {
@@ -8,7 +8,7 @@ public sealed class AppSettings
     public string Language { get; set; } = "en";          // en, vi
     public string Theme { get; set; } = "Light";          // Light, Dark, System
     public string Hotkey { get; set; } = "Alt+Shift+S";  // phím tắt chụp (toàn cục)
-    public string SaveDirectory { get; set; } = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), "SnapMark");
+    public string SaveDirectory { get; set; } = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyPictures), "NinoMark");
     public bool CopyAfterCapture { get; set; } = true;    // copy thêm vào clipboard khi lưu file
     public string DefaultFormat { get; set; } = "PNG";
 

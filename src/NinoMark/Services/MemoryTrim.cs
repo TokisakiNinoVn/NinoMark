@@ -2,7 +2,7 @@ using System.Runtime;
 using System.Runtime.InteropServices;
 using System.Windows.Threading;
 
-namespace SnapMark.Services;
+namespace NinoMark.Services;
 
 /// <summary>Giảm RAM khi app chạy nền: dọn GC rồi trả bớt working set cho hệ điều hành.</summary>
 public static class MemoryTrim

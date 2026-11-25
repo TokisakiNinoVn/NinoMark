@@ -7,7 +7,7 @@ using ContextMenuStrip = System.Windows.Forms.ContextMenuStrip;
 using MouseButtons = System.Windows.Forms.MouseButtons;
 using ToolTipIcon = System.Windows.Forms.ToolTipIcon;
 
-namespace SnapMark.Services;
+namespace NinoMark.Services;
 
 /// <summary>Logo / biểu tượng app dùng chung, lấy từ thư mục Assets (app.ico, app-logo.png) nhúng trong exe.</summary>
 public static class AppIcon
@@ -123,17 +123,17 @@ public sealed class TrayService : IDisposable
 public static class AutoStart
 {
     private const string RunKey = @"Software\Microsoft\Windows\CurrentVersion\Run";
-    private const string ValueName = "SnapMark";
-    private const string OldValueName = "QuickShot"; // tên cũ của app
+    private const string ValueName = "NinoMark";
+    private static readonly string[] OldValueNames = { "QuickShot", "SnapMark" }; // tên cũ của app
 
     public static void Apply(bool enable)
     {
         // Chạy thử với thư mục dữ liệu riêng (test) thì không đụng vào registry thật.
-        if (Environment.GetEnvironmentVariable("SNAPMARK_DATA_DIR") is { Length: > 0 }) return;
+        if (Environment.GetEnvironmentVariable("NINOMARK_DATA_DIR") is { Length: > 0 }) return;
         try
         {
             using var key = Registry.CurrentUser.OpenSubKey(RunKey, writable: true) ?? Registry.CurrentUser.CreateSubKey(RunKey);
-            key.DeleteValue(OldValueName, throwOnMissingValue: false); // bỏ mục khởi động theo tên cũ
+            foreach (var old in OldValueNames) key.DeleteValue(old, throwOnMissingValue: false); // bỏ mục khởi động theo tên cũ
             if (enable)
             {
                 var exe = Environment.ProcessPath;

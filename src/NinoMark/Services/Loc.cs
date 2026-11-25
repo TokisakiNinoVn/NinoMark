@@ -1,4 +1,4 @@
-namespace SnapMark.Services;
+namespace NinoMark.Services;
 
 /// <summary>Đa ngôn ngữ đơn giản (en / vi). Thiếu key thì trả về chính key.</summary>
 public static class Loc
@@ -35,8 +35,8 @@ public static class Loc
         ["disp.title"] = ("Display options", "Tùy chọn hiển thị"),
         ["status.empty"] = ("", ""),
         ["about.heading"] = ("Capture, annotate, share — in seconds", "Chụp, chú thích, chia sẻ — trong vài giây"),
-        ["about.desc"] = ("SnapMark is a lightweight screenshot tool for Windows. Capture the screen, annotate right on it, then copy or save the result in one smooth flow.",
-                          "SnapMark là công cụ chụp màn hình gọn nhẹ cho Windows. Chụp màn hình, chú thích ngay trên đó rồi copy hoặc lưu kết quả trong một luồng liền mạch."),
+        ["about.desc"] = ("NinoMark is a lightweight screenshot tool for Windows. Capture the screen, annotate right on it, then copy or save the result in one smooth flow.",
+                          "NinoMark là công cụ chụp màn hình gọn nhẹ cho Windows. Chụp màn hình, chú thích ngay trên đó rồi copy hoặc lưu kết quả trong một luồng liền mạch."),
         ["about.info"] = ("Information", "Thông tin"),
         ["about.donate"] = ("Donate", "Ủng hộ (Donate)"),
         ["about.openFailed"] = ("Could not open the link.", "Không mở được liên kết."),
@@ -54,11 +54,11 @@ public static class Loc
         ["how.4"] = ("Click an object to select it: drag to move, use the small bar to duplicate, rotate or flip. Double-click text to edit. Ctrl/Shift+click selects several.", "Bấm vào object để chọn: kéo để di chuyển, dùng thanh nhỏ để nhân bản, xoay hoặc lật. Nhấp đúp vào chữ để sửa. Ctrl/Shift+click để chọn nhiều."),
         ["how.5"] = ("Open the properties panel (gear) to change color, size, opacity and manage layers.", "Mở bảng thuộc tính (bánh răng) để đổi màu, độ dày, độ đậm và quản lý layer."),
         ["how.6"] = ("Press Enter or the green check to copy the result, or save it to a file. Esc cancels.", "Nhấn Enter hoặc dấu ✓ xanh để copy kết quả, hoặc lưu ra file. Esc để hủy."),
-        ["info.title"] = ("About SnapMark", "Về SnapMark"),
+        ["info.title"] = ("About NinoMark", "Về NinoMark"),
         ["info.author"] = ("Author", "Tác giả"),
         ["info.website"] = ("Website", "Trang web"),
         ["info.built"] = ("Built with", "Xây dựng bằng"),
-        ["info.thanks"] = ("Thank you for using SnapMark! If it saves you time, a small donation helps keep it improving.", "Cảm ơn bạn đã dùng SnapMark! Nếu app giúp bạn tiết kiệm thời gian, một khoản ủng hộ nhỏ sẽ giúp app tiếp tục được hoàn thiện."),
+        ["info.thanks"] = ("Thank you for using NinoMark! If it saves you time, a small donation helps keep it improving.", "Cảm ơn bạn đã dùng NinoMark! Nếu app giúp bạn tiết kiệm thời gian, một khoản ủng hộ nhỏ sẽ giúp app tiếp tục được hoàn thiện."),
         ["info.close"] = ("Close", "Đóng"),
         ["disp.saving"] = ("Saving", "Lưu ảnh"),
 
@@ -151,10 +151,10 @@ public static class Loc
         ["sys.title"] = ("System", "Hệ thống"),
         ["sys.autostart"] = ("Start with Windows", "Khởi động cùng Windows"),
         ["sys.tray"] = ("Keep running in the system tray when the window is closed", "Đóng cửa sổ vẫn chạy nền trong khay hệ thống"),
-        ["tray.open"] = ("Open SnapMark", "Mở SnapMark"),
+        ["tray.open"] = ("Open NinoMark", "Mở NinoMark"),
         ["tray.capture"] = ("Capture now", "Chụp ngay"),
         ["tray.exit"] = ("Exit", "Thoát"),
-        ["tray.balloon"] = ("SnapMark is still running in the system tray. Use the tray icon to open or exit.", "SnapMark vẫn chạy nền trong khay hệ thống. Dùng biểu tượng ở khay để mở hoặc thoát."),
+        ["tray.balloon"] = ("NinoMark is still running in the system tray. Use the tray icon to open or exit.", "NinoMark vẫn chạy nền trong khay hệ thống. Dùng biểu tượng ở khay để mở hoặc thoát."),
         ["arrow.Filled"] = ("Filled head", "Đầu đặc"),
         ["arrow.Open"] = ("Open head", "Đầu mở"),
         ["arrow.Both"] = ("Double-headed", "Hai đầu"),

@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Changed
+- Renamed the app from SnapMark to NinoMark. Existing settings and the start-with-Windows entry migrate automatically on first launch.
+- The `SNAPMARK_DATA_DIR` environment variable is now `NINOMARK_DATA_DIR`.
 - Lower memory use: the working set is trimmed when the app sits in the tray and after a capture, dropping idle RAM from ~160 MB to under 10 MB.
 
 ## [0.3.0] - 2026-11-21
@@ -29,5 +31,5 @@ First public release.
 ### Fixed
 - Icons and search field icon were unreadable on the dark theme at first launch.
 
-[Unreleased]: https://github.com/TokisakiNinoVn/SnapMark/compare/v0.3.0...HEAD
-[0.3.0]: https://github.com/TokisakiNinoVn/SnapMark/releases/tag/v0.3.0
+[Unreleased]: https://github.com/TokisakiNinoVn/NinoMark/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/TokisakiNinoVn/NinoMark/releases/tag/v0.3.0

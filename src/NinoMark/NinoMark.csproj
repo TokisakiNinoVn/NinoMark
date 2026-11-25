@@ -8,8 +8,8 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <AssemblyName>SnapMark</AssemblyName>
-    <RootNamespace>SnapMark</RootNamespace>
+    <AssemblyName>NinoMark</AssemblyName>
+    <RootNamespace>NinoMark</RootNamespace>
     <Version>0.3.0</Version>
     <ApplicationIcon>Assets/app-fit.ico</ApplicationIcon>
     <!-- Tối ưu RAM -->

@@ -14,6 +14,6 @@ jobs:
         with:
           dotnet-version: 10.0.x
       - name: Restore
-        run: dotnet restore SnapMark.sln
+        run: dotnet restore NinoMark.sln
       - name: Build
-        run: dotnet build SnapMark.sln -c Release --no-restore
+        run: dotnet build NinoMark.sln -c Release --no-restore

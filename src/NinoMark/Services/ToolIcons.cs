@@ -6,7 +6,7 @@ using Material.Icons.WPF;
 using Color = System.Windows.Media.Color;
 using Ellipse = System.Windows.Shapes.Ellipse;
 
-namespace SnapMark.Services;
+namespace NinoMark.Services;
 
 /// <summary>Icon dùng chung (Material Design Icons): trên thanh công cụ ở overlay và ở bảng cài đặt.</summary>
 public static class ToolIcons

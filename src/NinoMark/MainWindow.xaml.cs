@@ -10,11 +10,11 @@ using System.Windows.Input;
 using System.Windows.Interop;
 using System.Windows.Media;
 using Ellipse = System.Windows.Shapes.Ellipse;
-using SnapMark.Models;
-using SnapMark.Services;
-using SnapMark.Windows;
+using NinoMark.Models;
+using NinoMark.Services;
+using NinoMark.Windows;
 
-namespace SnapMark;
+namespace NinoMark;
 
 public partial class MainWindow : Window
 {
@@ -473,7 +473,7 @@ public partial class MainWindow : Window
 
     private void ToolRow_DragOver(object sender, DragEventArgs e)
     {
-        if (sender is not Border b || !e.Data.GetDataPresent("snapmark.tool")) return;
+        if (sender is not Border b || !e.Data.GetDataPresent("ninomark.tool")) return;
         e.Effects = DragDropEffects.Move; e.Handled = true;
         var after = e.GetPosition(b).Y > b.ActualHeight / 2;
         b.BorderBrush = (Brush)FindResource("AccentBrush");
@@ -487,7 +487,7 @@ public partial class MainWindow : Window
 
     private void ToolRow_Drop(object sender, DragEventArgs e)
     {
-        if (sender is not Border { Tag: string target } b || e.Data.GetData("snapmark.tool") is not string dragged) return;
+        if (sender is not Border { Tag: string target } b || e.Data.GetData("ninomark.tool") is not string dragged) return;
         var after = e.GetPosition(b).Y > b.ActualHeight / 2;
         b.BorderThickness = new Thickness(0);
         e.Handled = true;
@@ -545,7 +545,7 @@ public partial class MainWindow : Window
                 var p = e.GetPosition(null);
                 if (Math.Abs(p.X - _dragStart.X) < 4 && Math.Abs(p.Y - _dragStart.Y) < 4) return;
                 _dragCandidate = null;
-                DragDrop.DoDragDrop(grip, new DataObject("snapmark.tool", toolId), DragDropEffects.Move);
+                DragDrop.DoDragDrop(grip, new DataObject("ninomark.tool", toolId), DragDropEffects.Move);
             };
         }
         nameCell.Children.Add(grip);
@@ -959,7 +959,7 @@ public partial class MainWindow : Window
 
     private void Export_Click(object sender, RoutedEventArgs e)
     {
-        var dlg = new Microsoft.Win32.SaveFileDialog { Filter = "JSON|*.json", FileName = "snapmark-settings.json", DefaultExt = ".json" };
+        var dlg = new Microsoft.Win32.SaveFileDialog { Filter = "JSON|*.json", FileName = "ninomark-settings.json", DefaultExt = ".json" };
         if (dlg.ShowDialog(this) != true) return;
         try { SettingsService.Export(_settings, dlg.FileName); SetStatus(Loc.T("set.exportOk")); }
         catch (Exception ex) { SetStatus(ex.Message); }

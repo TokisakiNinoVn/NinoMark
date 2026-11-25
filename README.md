@@ -1,9 +1,13 @@
-# SnapMark
+<p align="center">
+  <img src="docs/images/logo.png" width="128" alt="NinoMark logo">
+</p>
+
+<h1 align="center">NinoMark</h1>
 
 **English** | [Tiếng Việt](README.vi.md)
 
-[![CI](https://github.com/TokisakiNinoVn/SnapMark/actions/workflows/ci.yml/badge.svg)](https://github.com/TokisakiNinoVn/SnapMark/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/github/v/release/TokisakiNinoVn/SnapMark)](https://github.com/TokisakiNinoVn/SnapMark/releases/latest)
+[![CI](https://github.com/TokisakiNinoVn/NinoMark/actions/workflows/ci.yml/badge.svg)](https://github.com/TokisakiNinoVn/NinoMark/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/TokisakiNinoVn/NinoMark)](https://github.com/TokisakiNinoVn/NinoMark/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 ![Platform](https://img.shields.io/badge/platform-Windows%2010%2F11-blue)
 ![.NET](https://img.shields.io/badge/.NET-10-512BD4)
@@ -18,7 +22,7 @@ Press a hotkey, drag a region, draw annotations right on top of it, then copy or
 
 ## Download
 
-Grab the latest build from the [Releases page](https://github.com/TokisakiNinoVn/SnapMark/releases/latest), unzip it and run `SnapMark.exe`.
+Grab the latest build from the [Releases page](https://github.com/TokisakiNinoVn/NinoMark/releases/latest), unzip it and run `NinoMark.exe`.
 The `win-x64` package already includes .NET, so nothing else needs to be installed.
 
 ## Features
@@ -56,21 +60,21 @@ All shortcuts can be changed in the main window.
 
 ## Settings
 
-Settings live in `%AppData%\SnapMark\settings.json`. Set the `SNAPMARK_DATA_DIR` environment variable to use a separate data folder (handy for testing without touching real settings). You can also export and import settings from the main window.
+Settings live in `%AppData%\NinoMark\settings.json`. Set the `NINOMARK_DATA_DIR` environment variable to use a separate data folder (handy for testing without touching real settings). You can also export and import settings from the main window.
 
 ## Build from source
 
 Requires Windows 10/11 and the [.NET 10 SDK](https://dotnet.microsoft.com/download).
 
 ```powershell
-dotnet build .\SnapMark.sln -c Release
-dotnet run --project .\src\SnapMark\SnapMark.csproj
+dotnet build .\NinoMark.sln -c Release
+dotnet run --project .\src\NinoMark\NinoMark.csproj
 ```
 
 Publish a self-contained single file:
 
 ```powershell
-dotnet publish .\src\SnapMark\SnapMark.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o .\publish
+dotnet publish .\src\NinoMark\NinoMark.csproj -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true -o .\publish
 ```
 
 ## Releasing
@@ -85,8 +89,8 @@ git push origin v0.4.0
 ## Project structure
 
 ```text
-SnapMark.sln
-src/SnapMark/
+NinoMark.sln
+src/NinoMark/
 ├─ App.xaml(.cs)                  # Entry point
 ├─ MainWindow.xaml(.cs)           # Settings window + global hotkey
 ├─ Models/AppSettings.cs          # Settings model
