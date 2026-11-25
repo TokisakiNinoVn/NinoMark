@@ -63,7 +63,12 @@ Cài đặt lưu tại `%AppData%\NinoMark\settings.json`. Đặt biến môi tr
 
 ## Tải về
 
-Tải bản chạy sẵn tại [trang Releases](https://github.com/TokisakiNinoVn/NinoMark/releases/latest): giải nén và chạy `NinoMark.exe` (bản `win-x64` đã kèm sẵn .NET, không cần cài thêm).
+Tải bản chạy sẵn tại [trang Releases](https://github.com/TokisakiNinoVn/NinoMark/releases/latest):
+
+- **`NinoMark-<phiên bản>-setup.exe`** (khuyên dùng): bộ cài có lối tắt Start menu / desktop và gỡ cài đặt, không cần quyền admin.
+- **`NinoMark-<phiên bản>-win-x64-portable.zip`**: giải nén và chạy `NinoMark.exe`, không cài gì vào máy.
+
+Cả hai đã kèm sẵn .NET, không cần cài thêm.
 
 ## Yêu cầu khi tự build
 

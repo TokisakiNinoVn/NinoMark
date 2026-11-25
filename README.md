@@ -22,8 +22,12 @@ Press a hotkey, drag a region, draw annotations right on top of it, then copy or
 
 ## Download
 
-Grab the latest build from the [Releases page](https://github.com/TokisakiNinoVn/NinoMark/releases/latest), unzip it and run `NinoMark.exe`.
-The `win-x64` package already includes .NET, so nothing else needs to be installed.
+Get the latest build from the [Releases page](https://github.com/TokisakiNinoVn/NinoMark/releases/latest):
+
+- **`NinoMark-<version>-setup.exe`** (recommended): installer with Start menu / desktop shortcuts and an uninstaller. No admin rights needed.
+- **`NinoMark-<version>-win-x64-portable.zip`**: unzip and run `NinoMark.exe`, nothing is installed.
+
+Both already include .NET, so nothing else needs to be installed.
 
 ## Features
 

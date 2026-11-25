@@ -22,27 +22,30 @@ jobs:
           $v = "${{ github.ref_name }}".TrimStart('v')
           "VERSION=$v" | Out-File -FilePath $env:GITHUB_ENV -Append
 
-      - name: Publish self-contained (win-x64)
+      - name: Publish (self-contained single file, win-x64)
         run: >
           dotnet publish src/NinoMark/NinoMark.csproj -c Release -r win-x64
           --self-contained true -p:PublishSingleFile=true
           -p:IncludeNativeLibrariesForSelfExtract=true -p:EnableCompressionInSingleFile=true
+          -p:DebugType=None -p:DebugSymbols=false
           -p:Version=$env:VERSION -o out/self-contained
 
-      - name: Publish framework-dependent
-        run: >
-          dotnet publish src/NinoMark/NinoMark.csproj -c Release -r win-x64
-          --self-contained false -p:Version=$env:VERSION -o out/framework-dependent
+      - name: Build installer (Inno Setup)
+        shell: pwsh
+        run: |
+          $iscc = Join-Path ${env:ProgramFiles(x86)} "Inno Setup 6/ISCC.exe"
+          if (-not (Test-Path $iscc)) { choco install innosetup -y --no-progress }
+          & $iscc "/DAppVersion=$env:VERSION" "/DSourceDir=../out/self-contained" "/DOutputDir=../dist" installer/NinoMark.iss
+          if ($LASTEXITCODE -ne 0) { throw "ISCC failed" }
 
-      - name: Package
+      - name: Package portable zip
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force dist | Out-Null
-          Compress-Archive -Path out/self-contained/* -DestinationPath "dist/NinoMark-$env:VERSION-win-x64.zip"
-          Compress-Archive -Path out/framework-dependent/* -DestinationPath "dist/NinoMark-$env:VERSION-win-x64-framework-dependent.zip"
+          Compress-Archive -Path out/self-contained/NinoMark.exe -DestinationPath "dist/NinoMark-$env:VERSION-win-x64-portable.zip"
 
       - name: Create GitHub release
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "${{ github.ref_name }}" dist/*.zip --title "NinoMark ${{ github.ref_name }}" --generate-notes
+        run: gh release create "${{ github.ref_name }}" (Get-ChildItem dist/*.exe, dist/*.zip).FullName --title "NinoMark ${{ github.ref_name }}" --generate-notes

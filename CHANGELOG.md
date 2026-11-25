@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Windows installer (`NinoMark-<version>-setup.exe`, built with Inno Setup) alongside the portable zip.
+
+### Changed
+- Donate link now points to https://tokisaki-nino.pages.dev/donate.
+- Release packages no longer include the `.pdb` debug symbols, and the framework-dependent zip was dropped.
+
+## [0.4.0] - 2026-11-25
+
 ### Changed
 - Renamed the app from SnapMark to NinoMark. Existing settings and the start-with-Windows entry migrate automatically on first launch.
 - The `SNAPMARK_DATA_DIR` environment variable is now `NINOMARK_DATA_DIR`.
@@ -31,5 +40,6 @@ First public release.
 ### Fixed
 - Icons and search field icon were unreadable on the dark theme at first launch.
 
-[Unreleased]: https://github.com/TokisakiNinoVn/NinoMark/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/TokisakiNinoVn/NinoMark/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/TokisakiNinoVn/NinoMark/releases/tag/v0.4.0
 [0.3.0]: https://github.com/TokisakiNinoVn/NinoMark/releases/tag/v0.3.0
