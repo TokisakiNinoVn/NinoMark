@@ -39,6 +39,7 @@ public static class Loc
                           "NinoMark là công cụ chụp màn hình gọn nhẹ cho Windows. Chụp màn hình, chú thích ngay trên đó rồi copy hoặc lưu kết quả trong một luồng liền mạch."),
         ["about.info"] = ("Information", "Thông tin"),
         ["about.donate"] = ("Donate", "Ủng hộ (Donate)"),
+        ["about.update"] = ("Check for updates", "Kiểm tra cập nhật"),
         ["about.openFailed"] = ("Could not open the link.", "Không mở được liên kết."),
         ["about.features"] = ("Features", "Tính năng"),
         ["about.howto"] = ("How to use", "Cách dùng"),

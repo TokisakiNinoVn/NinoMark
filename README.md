@@ -15,10 +15,9 @@
 A fast, lightweight screenshot and annotation tool for Windows, built with C# and WPF (.NET 10).
 Press a hotkey, drag a region, draw annotations right on top of it, then copy or save. No separate editor window.
 
-<!-- Add screenshots to docs/images/ and uncomment:
-![Overlay editor](docs/images/overlay.png)
-![Settings](docs/images/settings.png)
--->
+Website: [nino-mark.vercel.app](https://nino-mark.vercel.app)
+
+![NinoMark overlay editor: selection, arrows, numbered markers, text, highlight and ruler](docs/images/overlay.png)
 
 ## Download
 

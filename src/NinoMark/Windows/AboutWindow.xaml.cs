@@ -26,6 +26,7 @@ public partial class AboutWindow : Window
         BuiltLabel.Text = Loc.T("info.built"); BuiltValue.Text = "C# · WPF · .NET 10 · Material Design Icons";
         ThanksText.Text = Loc.T("info.thanks");
         CopyrightText.Text = $"© {DateTime.Now.Year} {AppInfo.Author}";
+        UpdateButton.Content = "⟳ " + Loc.T("about.update");
         DonateButton.Content = "♥ " + Loc.T("about.donate");
         CloseButton.Content = Loc.T("info.close");
     }
@@ -33,6 +34,11 @@ public partial class AboutWindow : Window
     private void Website_Click(object sender, RoutedEventArgs e)
     {
         if (!AppInfo.OpenUrl(AppInfo.WebsiteUrl)) MessageBox.Show(this, Loc.T("about.openFailed"), AppInfo.AppName);
+    }
+
+    private void Update_Click(object sender, RoutedEventArgs e)
+    {
+        if (!AppInfo.OpenUrl(AppInfo.ReleasesUrl)) MessageBox.Show(this, Loc.T("about.openFailed"), AppInfo.AppName);
     }
 
     private void Donate_Click(object sender, RoutedEventArgs e)

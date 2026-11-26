@@ -6,6 +6,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-11-26
+
+### Added
+- "Check for updates" button in the About window. It opens the latest GitHub release in your browser; the app itself still makes no network connections.
+- Website at https://nino-mark.vercel.app (English and Vietnamese), linked from the About window.
+- Screenshot in the README.
+
+### Fixed
+- The installer icon looked blurry because its icon file had a single 256px frame. It now uses a multi-size icon (16 to 256px).
+
+## [0.4.1] - 2026-11-26
+
 ### Added
 - Windows installer (`NinoMark-<version>-setup.exe`, built with Inno Setup) alongside the portable zip.
 
@@ -40,6 +52,8 @@ First public release.
 ### Fixed
 - Icons and search field icon were unreadable on the dark theme at first launch.
 
-[Unreleased]: https://github.com/TokisakiNinoVn/NinoMark/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/TokisakiNinoVn/NinoMark/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/TokisakiNinoVn/NinoMark/compare/v0.4.1...v0.5.0
+[0.4.1]: https://github.com/TokisakiNinoVn/NinoMark/compare/v0.4.0...v0.4.1
 [0.4.0]: https://github.com/TokisakiNinoVn/NinoMark/releases/tag/v0.4.0
 [0.3.0]: https://github.com/TokisakiNinoVn/NinoMark/releases/tag/v0.3.0

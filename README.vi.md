@@ -14,6 +14,10 @@
 
 Ứng dụng chụp màn hình và chú thích nhanh cho Windows, viết bằng C# + WPF (.NET 10). Nhấn phím tắt, kéo chọn vùng, vẽ chú thích ngay trên vùng chọn rồi copy hoặc lưu — không cần mở thêm cửa sổ chỉnh sửa nào.
 
+Trang web: [nino-mark.vercel.app](https://nino-mark.vercel.app)
+
+![Overlay chú thích của NinoMark: vùng chọn, mũi tên, đánh số, chữ, highlight và thước đo](docs/images/overlay.png)
+
 ## Tính năng
 
 ### Chụp & chọn vùng
