@@ -10,7 +10,10 @@ public static class AppInfo
 
     // ── TODO: thay bằng thông tin thật ──
     public const string Author = "Tokisaki Nino";
-    public const string WebsiteUrl = "https://github.com/TokisakiNinoVn/NinoMark";
+    public const string WebsiteUrl = "https://nino-mark.vercel.app";
+    public const string RepoUrl = "https://github.com/TokisakiNinoVn/NinoMark";
+    /// <summary>Trang bản phát hành mới nhất. App chỉ mở trang này bằng trình duyệt, không tự kết nối mạng.</summary>
+    public const string ReleasesUrl = RepoUrl + "/releases/latest";
     public const string DonateUrl = "https://tokisaki-nino.pages.dev/donate";
 
     public static string Version => Assembly.GetExecutingAssembly().GetName().Version?.ToString(3) ?? "1.0.0";

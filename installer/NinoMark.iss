@@ -19,14 +19,15 @@ AppId={{6F2B1C0E-4D7A-4B8E-9C35-2A71E5D0B9A4}
 AppName={#AppName}
 AppVersion={#AppVersion}
 AppPublisher=Tokisaki Nino
-AppPublisherURL=https://github.com/TokisakiNinoVn/NinoMark
+AppPublisherURL=https://nino-mark.vercel.app
 AppSupportURL=https://github.com/TokisakiNinoVn/NinoMark/issues
 DefaultDirName={autopf}\{#AppName}
 DefaultGroupName={#AppName}
 DisableProgramGroupPage=yes
 OutputDir={#OutputDir}
 OutputBaseFilename=NinoMark-{#AppVersion}-setup
-SetupIconFile=..\src\NinoMark\Assets\app.ico
+; app-fit.ico has 16..256px frames; the old app.ico only had a single 256px frame, which looked blurry when Windows scaled it down
+SetupIconFile=..\src\NinoMark\Assets\app-fit.ico
 UninstallDisplayIcon={app}\{#AppExe}
 Compression=lzma2
 SolidCompression=yes

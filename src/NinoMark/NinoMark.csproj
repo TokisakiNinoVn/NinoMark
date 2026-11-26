@@ -10,7 +10,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AssemblyName>NinoMark</AssemblyName>
     <RootNamespace>NinoMark</RootNamespace>
-    <Version>0.3.0</Version>
+    <Version>0.5.0</Version>
     <ApplicationIcon>Assets/app-fit.ico</ApplicationIcon>
     <!-- Tối ưu RAM -->
     <ConcurrentGarbageCollection>false</ConcurrentGarbageCollection>
